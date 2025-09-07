@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAIS_REAL STORE - Premium Akun & Top Up</title>
+<style>
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#0a0a0a;color:#fff;line-height:1.5;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* HEADER */
+header{position:relative;text-align:center;padding:50px;background:linear-gradient(135deg,#ff00ff,#00ffff);overflow:hidden;}
+header img{width:180px;border-radius:15px;margin-bottom:15px;transition:0.5s;}
+header img:hover{transform:scale(1.1);}
+header h1{font-size:2.5rem;margin-bottom:10px;text-shadow:2px 2px 10px #000;}
+header p{font-size:1.2rem;color:#f0f0f0;text-shadow:1px 1px 5px #000;}
+
+/* MARQUEE MODERN */
+.marquee-container{overflow:hidden;background:#111;padding:10px;margin-bottom:20px;border-radius:10px;}
+.marquee{display:inline-block;white-space:nowrap;animation:marquee 15s linear infinite;font-weight:bold;color:#0ff;}
+@keyframes marquee{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+
+/* FILTER BUTTON */
+#filter{display:flex;justify-content:center;gap:10px;margin:20px 0;flex-wrap:wrap;}
+.filter-btn{padding:10px 15px;border:none;border-radius:8px;background:#ff00ff;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;}
+.filter-btn:hover{background:#00ffff;transform:scale(1.05);}
+
+/* PRODUK GRID */
+#produk-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:0 20px 40px 20px;}
+.produk-item{background:#111;border-radius:15px;overflow:hidden;box-shadow:0 0 20px rgba(0,255,255,0.3);transition:0.3s;position:relative;}
+.produk-item:hover{transform:scale(1.05);}
+.produk-item img{width:100%;height:220px;object-fit:cover;transition:0.3s;}
+.produk-item h2{font-size:1.2rem;margin:10px;}
+.produk-item p{font-size:0.9rem;margin:5px 10px;color:#ccc;}
+.produk-item .status{font-weight:bold;}
+.produk-item .status.tersedia{color:#0f0;}
+.produk-item .status.terjual{color:#f00;}
+.produk-item button{margin:10px;padding:10px 15px;border:none;border-radius:8px;background:#00ffff;color:#000;font-weight:bold;cursor:pointer;transition:0.3s;}
+.produk-item button:hover{background:#ff00ff;color:#fff;transform:scale(1.05);}
+
+/* PAYMENT BUTTON */
+.payment{display:flex;justify-content:center;gap:15px;margin-bottom:30px;flex-wrap:wrap;}
+.payment a{display:flex;align-items:center;gap:8px;padding:10px 15px;border-radius:10px;background:#00ffff;color:#000;font-weight:bold;transition:0.3s;}
+.payment a img{width:30px;height:30px;}
+.payment a:hover{background:#ff00ff;color:#fff;transform:scale(1.1);}
+
+/* SOCIAL LINK */
+.social{display:flex;justify-content:center;gap:15px;margin-bottom:30px;}
+.social a{padding:10px 15px;background:#222;border-radius:10px;color:#fff;transition:0.3s;}
+.social a:hover{background:#555;transform:scale(1.05);}
+</style>
+</head>
+<body>
+
+<header>
+<img src="images/HEADER_HD.jpg" alt="RAIS_REAL STORE">
+<h1>RAIS_REAL_STORE</h1>
+<p>Aman & Cepat | Jual Beli Akun, Joki & Top Up Semua Game</p>
+</header>
+
+<div class="marquee-container">
+<div class="marquee">🔥 Semua transaksi aman & cepat! Hubungi admin untuk bukti transaksi 🔥</div>
+</div>
+
+<div id="filter">
+<button class="filter-btn" onclick="filterGame('Semua')">Semua</button>
+<button class="filter-btn" onclick="filterGame('Mobile Legends')">ML</button>
+<button class="filter-btn" onclick="filterGame('Free Fire')">FF</button>
+<button class="filter-btn" onclick="filterGame('eFootball')">eFootball</button>
+<button class="filter-btn" onclick="filterGame('Joki')">Joki</button>
+<button class="filter-btn" onclick="filterGame('Top Up')">Top Up</button>
+</div>
+
+<section id="produk-list"></section>
+
+<div class="payment">
+<a href="https://wa.me/6287824124265" target="_blank"><img src="https://i.ibb.co/0Q5zY9c/whatsapp.png" alt="WA"> WhatsApp</a>
+<a href="https://link.dana.id/transfer/087824124265" target="_blank"><img src="https://i.ibb.co/YL2ZZk9/dana.png" alt="Dana"> Dana</a>
+<a href="https://wa.me/6287824124265" target="_blank"><img src="https://i.ibb.co/9sVXrXk/gopay.png" alt="GoPay"> GoPay</a>
+<a href="https://wa.me/62901641232447" target="_blank"><img src="https://i.ibb.co/Qm7P0kv/seabank.png" alt="SeaBank"> SeaBank</a>
+</div>
+
+<div class="social">
+<a href="https://www.tiktok.com/@sikecilbarbar2?_t=ZS-8zXA6Mpra9E&_r=1" target="_blank">TikTok</a>
+<a href="https://www.facebook.com/khaidir.indah.1" target="_blank">Facebook</a>
+</div>
+
+<script>
+const produkData = [
+{id:1, game:"eFootball", nama_akun:"AKUN EFOOTBALL 150K", harga:150000, deskripsi:"Akun eFootball lengkap", gambar:"images/HEADER_HD.jpg", status:"Tersedia"},
+{id:2, game:"Mobile Legends", nama_akun:"AKUN ML 100K", harga:100000, deskripsi:"Akun ML lengkap", gambar:"images/ML_HD_PLACEHOLDER.jpg", status:"Tersedia"},
+{id:3, game:"Free Fire", nama_akun:"AKUN FF 100K", harga:100000, deskripsi:"Akun FF lengkap", gambar:"images/FF_HD_PLACEHOLDER.jpg", status:"Tersedia"},
+{id:4, game:"Joki", nama_akun:"Joki ML Gendong mulai Dari harga", harga:4500, deskripsi:"Jasa joki Mobile Legends aman & cepat", gambar:"images/JOKI_HD_PLACEHOLDER.jpg", status:"Tersedia"},
+{id:5, game:"Top Up", nama_akun:"Top Up Semua Game mulai Dari harga 10k", harga:10000, deskripsi:"Top Up diamond/coin semua game sesuai harga standar", gambar:"images/TOPUP_HD_PLACEHOLDER.jpg", status:"Tersedia"}
+];
+
+const produkList = document.getElementById("produk-list");
+function tampilkanProduk(data){
+produkList.innerHTML="";
+data.forEach(item=>{
+let card = document.createElement("div");
+card.className="produk-item";
+card.innerHTML=`
+<img src="${item.gambar}" alt="${item.nama_akun}">
+<h2>${item.nama_akun} (${item.game})</h2>
+<p>${item.deskripsi}</p>
+<p>Harga: Rp ${item.harga.toLocaleString()}</p>
+<p class="status ${item.status==='Tersedia'?'tersedia':'terjual'}">${item.status}</p>
+${item.status==="Tersedia"?`<button onclick="beliAkun(${item.id})">Beli via WA</button>`:""}
+`;
+produkList.appendChild(card);
+});
+}
+
+function filterGame(game){
+if(game==="Semua"){tampilkanProduk(produkData);}
+else{tampilkanProduk(produkData.filter(p=>p.game===game));}
+}
+
+function beliAkun(id){
+const akun=produkData.find(p=>p.id===id);
+window.open("https://wa.me/6287824124265?text=Halo admin, saya mau beli "+encodeURIComponent(akun.nama_akun),"_blank");
+}
+
+tampilkanProduk(produkData);
+</script>
+
+</body>
+</html>
